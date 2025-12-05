@@ -10,7 +10,7 @@ class GitHub:
         return body
     
 
-    def serch_repo(self, name):
+    def search_repo(self, name):
         r = requests.get(
             "https://api.github.com/search/repositories",
             params={"q": name}
@@ -18,6 +18,14 @@ class GitHub:
         body = r.json()
 
         return body
+    
+
+    def get_emojis(self):
+        r = requests.get(f'https://api.github.com/emojis')
+        body = r.json()
+
+        return body
+    
     
     
     
